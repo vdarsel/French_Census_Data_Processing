@@ -199,7 +199,7 @@ def process_unseen_geographical_values_training(df_train, df_test):
                     df_test.loc[idx_to_change_val, geo_current] = res
                 else:
                     # Raise an error if no valid distribution is found for the parent area
-                    raise ImplementationError("No valid distribution found for parent area.")
+                    raise AssertionError("No valid distribution found for parent area.")
     return df_test
 
 
