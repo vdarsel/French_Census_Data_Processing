@@ -67,25 +67,28 @@ for k,v in traduction.items():
 
 data_before_reweighting["Activity"] = (data_before_reweighting["Activity"]).astype(str)
 ## Working hours
-traduction = {"Z":3}
+traduction = {"Z":"3"}
 
 data_before_reweighting["Hours"] = data["TP"]
 for k,v in traduction.items():
     data_before_reweighting.loc[data["TP"]==k,"Hours"]=v
+    
+
 ## Tranport means to comute
-traduction = {"ZZ":7}
+traduction = {"ZZ":"7"}
 
 data_before_reweighting["Transport"] = data["TRANS"]
 for k,v in traduction.items():
     data_before_reweighting.loc[data["TRANS"]==k,"Transport"]=v
+    
 ## Link to reference person in the household
-traduction = {"Z":10}
+traduction = {"Z":"10"}
 
 data_before_reweighting["ReferenceLink"] = data["LPRM"]
 for k,v in traduction.items():
     data_before_reweighting.loc[data["LPRM"]==k,"ReferenceLink"]=v
 ## Family Link
-traduction = {"Z":"4"}
+traduction = {"Z":"1"}
 
 data_before_reweighting["FamilyLink"] = data["LIENF"]
 for k,v in traduction.items():
