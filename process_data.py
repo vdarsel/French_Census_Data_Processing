@@ -75,7 +75,7 @@ for k,v in traduction.items():
     
 
 ## Tranport means to comute
-traduction = {"ZZ":"7"}
+traduction = {"Z":"7"}
 
 data_before_reweighting["Transport"] = data["TRANS"]
 for k,v in traduction.items():
