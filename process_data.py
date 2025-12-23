@@ -245,7 +245,7 @@ data_before_reweighting[name_var_final] = data_before_reweighting[name_var_final
 IRIS_available = data["IRIS"].apply(lambda x: x[:5]!="ZZZZZ")
 
 data_before_reweighting["City"] = data["IRIS"].apply(lambda x: x[:5])
-data_before_reweighting.loc[~IRIS_available,'City'] = data_before_reweighting.loc[~IRIS_available,'County']
+data_before_reweighting.loc[~IRIS_available,'City'] = data_before_reweighting.loc[~IRIS_available,'County']+"Z"
 ## TRIRIS
 name_var_original="TRIRIS"
 name_var_final="TRIRIS"
@@ -254,7 +254,7 @@ TRIRIS_available = data["TRIRIS"].apply(lambda x: (x[0] in ["9","7"]))
 
 data_before_reweighting[name_var_final] = data[name_var_original]
 
-data_before_reweighting.loc[~TRIRIS_available,"TRIRIS"] = data_before_reweighting.loc[~TRIRIS_available,'City']
+data_before_reweighting.loc[~TRIRIS_available,"TRIRIS"] = data_before_reweighting.loc[~TRIRIS_available,'City']+"Z"
 data_before_reweighting[name_var_final] = data_before_reweighting[name_var_final].astype(str)
 ## IRIS
 name_var_original="IRIS"
@@ -264,7 +264,7 @@ IRIS_available = data["IRIS"].apply(lambda x: x[0]!="Z")
 
 data_before_reweighting[name_var_final] = data[name_var_original]
 
-data_before_reweighting.loc[~IRIS_available,"IRIS"] = data_before_reweighting.loc[~IRIS_available,'TRIRIS']
+data_before_reweighting.loc[~IRIS_available,"IRIS"] = data_before_reweighting.loc[~IRIS_available,'TRIRIS']+"ZZZ"
 data_before_reweighting[name_var_final] = data_before_reweighting[name_var_final].astype(str)
 
 
